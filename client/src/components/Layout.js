@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import "../layout.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { Badge } from "antd";
 
 function Layout({ children }) {
   const [collapsed, setCollapsed] = useState(false);
-  const {user} = useSelector((state) => state.user);
+  const { user } = useSelector((state) => state.user);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -29,8 +30,7 @@ function Layout({ children }) {
       name: "Profile",
       path: "/profile",
       icon: "ri-user-line",
-    }
-    
+    },
   ];
 
   const adminMenu = [
@@ -42,20 +42,18 @@ function Layout({ children }) {
     {
       name: "Users",
       path: "/users",
-      icon: "ri-user-line"
+      icon: "ri-user-line",
     },
     {
       name: "Doctors",
       path: "/doctors",
-      icon: "ri-user-add-fill"
-
+      icon: "ri-user-add-fill",
     },
     {
       name: "Profile",
       path: "/profile",
       icon: "ri-user-line",
-    }
-    
+    },
   ];
 
   const menuTobeRendered = user?.isAdmin ? adminMenu : userMenu;
@@ -63,7 +61,7 @@ function Layout({ children }) {
   return (
     <div className="main">
       <div className="d-flex layout">
-        <div className= 'sidebar'>
+        <div className="sidebar">
           <div className="sidebar-header">
             <h1 className="logo">DOCTRO</h1>
           </div>
@@ -83,14 +81,15 @@ function Layout({ children }) {
               );
             })}
             <div
-                  className={`d-flex menu-item`} onClick={() => {
-                    localStorage.clear();
-                    navigate('/login');
-                  }}>
-                
-                  <i className='ri-logout-box-line'></i>
-                  {!collapsed && <Link to='/login'>Logout </Link>}
-                </div>
+              className={`d-flex menu-item`}
+              onClick={() => {
+                localStorage.clear();
+                navigate("/login");
+              }}
+            >
+              <i className="ri-logout-box-line"></i>
+              {!collapsed && <Link to="/login">Logout </Link>}
+            </div>
           </div>
         </div>
 
@@ -109,9 +108,13 @@ function Layout({ children }) {
             )}
 
             <div className="d-flex align-items-center px-4">
+              <Badge count={user?.unseenNotifications.length}>
               <i className="ri-notification-line header-action-icon px-3"></i>
-              <Link className = "anchor" to='/profile'>{user?.name}</Link>
 
+              </Badge>
+              <Link className="anchor mx-4" to="/profile">
+                {user?.name}
+              </Link>
             </div>
           </div>
 

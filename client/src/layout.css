@@ -41,6 +41,7 @@
     border-radius: 5px;
     box-shadow: 0 0 2px gray;
     height: 82vh;
+    padding: 15px;
 }
 
 .menu {
@@ -76,4 +77,8 @@
     color: black;
     cursor: pointer;
     padding-left: 10px;
+}
+
+.ant-scroll-number-only-unit {
+
 }
