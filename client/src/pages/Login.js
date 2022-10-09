@@ -46,13 +46,16 @@ function Login() {
             <Input placeholder= 'Password' type= 'password' />
           </Form.Item>  
 
-          <Button className='primary-button my-3' htmlType= 'submit'>
+          
+          <Button className='primary-button my-3 full-width-button' htmlType= 'submit'>
             Login
           </Button>
 
           <Link to= '/register' className='anchor'>
             Click here for Sign Up 
           </Link>
+
+         
 
         </Form>
 

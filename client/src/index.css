@@ -91,6 +91,10 @@ label {
     font-size: 17px !important;
 }
 
+.full-width-button {
+    width: 100% !important;
+}
+
 .anchor {
     color: black !important;
     text-decoration: underline !important;
