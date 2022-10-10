@@ -156,7 +156,7 @@ router.post("/delete-all-notifications", authMiddleware, async (req, res) => {
     updatedUser.password = undefined;
     res.status(200).send({
       success: true,
-      message: "All notifications marked as seen",
+      message: "All notifications cleared",
       data: updatedUser,
     });
   } catch (error) {

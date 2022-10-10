@@ -18,10 +18,11 @@ function Notifications() {
       dispatch(showLoading());
       const response = await axios.post(
         "/api/user/mark-all-notifications-as-seen",
-        { userId: user._id }, {
-            headers : {
-                Authorization : `Bearer ${localStorage.getItem('token')}`
-            }
+        { userId: user._id },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
         }
       );
       dispatch(hideLoading());
@@ -43,10 +44,11 @@ function Notifications() {
       dispatch(showLoading());
       const response = await axios.post(
         "/api/user/delete-all-notifications",
-        { userId: user._id }, {
-            headers : {
-                Authorization : `Bearer ${localStorage.getItem('token')}`
-            }
+        { userId: user._id },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
         }
       );
       dispatch(hideLoading());
@@ -77,7 +79,7 @@ function Notifications() {
 
           {user?.unseenNotifications.map((notification) => (
             <div
-              className="card p-2"
+              className="card p-2 mt-2"
               onClick={() => navigate(notification.onClickPath)}
             >
               <div className="card-text">{notification.message}</div>
@@ -86,12 +88,14 @@ function Notifications() {
         </Tabs.TabPane>
         <Tabs.TabPane tab="Seen" key={1}>
           <div className="d-flex justify-content-end">
-            <h1 className="anchor" onClick={() => deleteAll()} >Delete all</h1>
+            <h1 className="anchor" onClick={() => deleteAll()}>
+              Delete all
+            </h1>
           </div>
 
           {user?.seenNotifications.map((notification) => (
             <div
-              className="card p-2"
+              className="card p-2 mt-2"
               onClick={() => navigate(notification.onClickPath)}
             >
               <div className="card-text">{notification.message}</div>
