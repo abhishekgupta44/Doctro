@@ -67,6 +67,12 @@ label {
     font-weight: bold;
 }
 
+p {
+    color: rgba(0, 0, 0, 0.581);
+    margin: 2px;
+    padding: 0;
+}
+
 .card-title {
     font-size: 22px;
     font-weight: bold;
@@ -80,6 +86,7 @@ label {
 .card {
     box-shadow: 0 0 2px grey;
     border-radius: 0 !important;
+    
 }
 
 .primary-button {
@@ -100,6 +107,10 @@ label {
     text-decoration: underline !important;
     cursor: pointer;
     font-size: 15px !important;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }
 
 
