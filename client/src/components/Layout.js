@@ -33,6 +33,24 @@ function Layout({ children }) {
     },
   ];
 
+  const doctorMenu = [
+    {
+      name: "Home",
+      path: "/",
+      icon: "ri-home-line",
+    },
+    {
+      name: "Appointments",
+      path: "/appointments",
+      icon: "ri-file-list-line",
+    },
+    {
+      name: "Profile",
+      path: `/doctor/profile/${user?._id}`,
+      icon: "ri-user-line",
+    },
+  ];
+
   const adminMenu = [
     {
       name: "Home",
@@ -56,14 +74,16 @@ function Layout({ children }) {
     },
   ];
 
-  const menuTobeRendered = user?.isAdmin ? adminMenu : userMenu;
+  const menuTobeRendered = user?.isAdmin ? adminMenu : user?.isDoctor ? doctorMenu : userMenu;
 
+  const role = user?.isAdmin ? "Admin" : user?.isDoctor ? "Doctor" : "User";
   return (
     <div className="main">
       <div className="d-flex layout">
         <div className="sidebar">
           <div className="sidebar-header">
             <h1 className="logo">DOCTRO</h1>
+              <h1 className="role">{role} </h1>
           </div>
 
           <div className="menu">

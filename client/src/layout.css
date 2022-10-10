@@ -9,6 +9,12 @@
     font-weight: bold;
 }
 
+.role {
+    color: white;
+    font-size: 16px;
+    margin-top: -20px;
+}
+
 .sidebar {
     background-color: brown;
     border-radius: 5px;
