@@ -26,11 +26,7 @@ function Layout({ children }) {
       path: "/apply-doctor",
       icon: "ri-hospital-line",
     },
-    {
-      name: "Profile",
-      path: "/profile",
-      icon: "ri-user-line",
-    },
+    
   ];
 
   const doctorMenu = [
@@ -67,11 +63,11 @@ function Layout({ children }) {
       path: "/admin/doctorslist",
       icon: "ri-user-add-fill",
     },
-    {
-      name: "Profile",
-      path: "/profile",
-      icon: "ri-user-line",
-    },
+    // {
+    //   name: "Profile",
+    //   path: "/profile",
+    //   icon: "ri-user-line",
+    // },
   ];
 
   const menuTobeRendered = user?.isAdmin ? adminMenu : user?.isDoctor ? doctorMenu : userMenu;
